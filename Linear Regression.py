@@ -55,12 +55,14 @@ for it in range(n_epochs):
 
     print(f'Epoch {it+1}/{n_epochs}, Loss: {loss.item():.4f}')
 
+# Graphing loss per iteration
 plt.plot(losses)
 plt.show()
 
 # Plot the graph
 predicted = model(inputs).detach().numpy()
-plt.scatter(X, Y, label='Original data')
+# plt.scatter(X, Y, label='Original data')
+plt.plot(X, Y, 'ro', label='Original data')
 plt.plot(X, predicted, label='Fitted line')
 plt.legend()
 plt.show()
